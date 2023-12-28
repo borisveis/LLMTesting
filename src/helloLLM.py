@@ -14,3 +14,5 @@ print(testFramwork.validate.cosine_similarity_score(responsestates,numberofstate
 def test_cosinesimularity():
         print("cosinesimularity="+str(cosinesimularity))
         assert cosinesimularity > 0.5
+        assert (responsestates.__contains__("United States"))
+        assert (responsestates.__contains__("50"))
