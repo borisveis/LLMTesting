@@ -1,15 +1,16 @@
 phases:
   install:
+    - ping google.com
   pre_build:
     commands:
-      - ping google.com
-    build:
-      commands:
-        - cd src
+      - cd src
         - pip install GPT4All
         - pip install sklearn
         - pip install sentence-transformers
         - pip install TfidfVectorizer
         - pip install sentence_similarity
         - pip install cmake
+
+    build:
+      commands:
         - python3 -m pytest src/examplestest.py
