@@ -1,8 +1,8 @@
 phases:
-  install:
-    - ping google.com
+
   pre_build:
     commands:
+    - ping google.com
       - cd src
         - pip install GPT4All
         - pip install sklearn
