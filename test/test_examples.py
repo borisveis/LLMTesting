@@ -1,24 +1,15 @@
-imp
+
 from gpt4all import GPT4All
+from src.utils import framework
 from src.utils import config
 
 model = GPT4All(config.model)
-#
-# # entries = os.listdir('.')
-responsestates = utils.framework.c.chat("how many states are in US", 100)
-print("AI:"+responsestates)
-numberofstatesprompt = "There are 50 states"
-print("cosine simularity score:")
-cosinesimularity = utils.cosine_similarity_score(responsestates,numberofstatesprompt)
-print(utils.framwork.validate.cosine_similarity_score(responsestates, numberofstatesprompt))
+
+responsestates = framework.chat("how many states are in US", 100)
+expected_number_of_states_response = "There are 50 states"
+# cosinesimularity = framework.cosine_similarity(responsestates,expected_number_of_states_response)
 def test_cosinesimularity():
-        print("cosinesimularity="+str(cosinesimularity))
-        assert cosinesimularity>0.6
-
-
-# test asserting an arbitrary cosine sumularity score. As is, this is only for demonstration and example.
-# It doesn't necessarily test much
-assert cosinesimularity > 0.5
+        assert framework.validate.cosine_similarity_score(responsestates,expected_number_of_states_response) > 0.5
 
 
 # a positive test validating  reponse contains specific strings is included in the response(s)
@@ -30,7 +21,7 @@ def test_contains():
 #a positive test validating a specific string is not included in the respons(s)
 def test_notcontains():
         prompt="what is robert half"
-        rhiresponse = utils.framwork.chat(prompt, 100)
+        rhiresponse = framework.chat(prompt, 100)
         notcontain="financial"
 
         assert (not rhiresponse.__contains__(notcontain))
