@@ -1,7 +1,7 @@
-import json
 import testFramwork
 from gpt4all import GPT4All
-import config
+from src.utils import config
+
 model = GPT4All(config.model)
 responsestates = testFramwork.chat("how many states are in US", 100)
 print("AI:"+responsestates)

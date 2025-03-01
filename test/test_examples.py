@@ -1,16 +1,16 @@
-import json
-import testFramwork
+imp
 from gpt4all import GPT4All
-import config
+from src.utils import config
+
 model = GPT4All(config.model)
 #
 # # entries = os.listdir('.')
-responsestates = testFramwork.chat("how many states are in US", 100)
+responsestates = utils.framework.c.chat("how many states are in US", 100)
 print("AI:"+responsestates)
 numberofstatesprompt = "There are 50 states"
 print("cosine simularity score:")
-cosinesimularity = testFramwork.validate.cosine_similarity_score(responsestates,numberofstatesprompt)
-print(testFramwork.validate.cosine_similarity_score(responsestates, numberofstatesprompt))
+cosinesimularity = utils.cosine_similarity_score(responsestates,numberofstatesprompt)
+print(utils.framwork.validate.cosine_similarity_score(responsestates, numberofstatesprompt))
 def test_cosinesimularity():
         print("cosinesimularity="+str(cosinesimularity))
         assert cosinesimularity>0.6
@@ -30,7 +30,7 @@ def test_contains():
 #a positive test validating a specific string is not included in the respons(s)
 def test_notcontains():
         prompt="what is robert half"
-        rhiresponse = testFramwork.chat(prompt, 100)
+        rhiresponse = utils.framwork.chat(prompt, 100)
         notcontain="financial"
 
         assert (not rhiresponse.__contains__(notcontain))

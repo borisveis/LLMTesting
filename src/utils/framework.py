@@ -1,5 +1,5 @@
 from gpt4all import GPT4All
-import config
+import src.utils.config as config
 model = GPT4All(config.model)
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
