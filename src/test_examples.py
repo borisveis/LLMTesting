@@ -8,8 +8,8 @@ responsestates = test_Framwork.chat("how many states are in US", 100)
 print("AI:"+responsestates)
 numberofstatesprompt = "There are 50 states"
 print("cosine simularity score:")
-cosinesimularity = test_Framwork.validate.cosine_similarity_score(responsestates,numberofstatesprompt)
-print(test_Framwork.validate.cosine_similarity_score(responsestates, numberofstatesprompt))
+cosinesimularity = test_Framwork.validate.test_cosine_similarity_score(responsestates,numberofstatesprompt)
+print(test_Framwork.validate.test_cosine_similarity_score(responsestates, numberofstatesprompt))
 def test_cosinesimularity():
         print("cosinesimularity="+str(cosinesimularity))
         assert cosinesimularity>0.6
@@ -38,8 +38,8 @@ def test_notcontains():
         expectedresponse = "There are 50 states"
         # You can try different syntax to say the same. For example "50" or "There's 50 states". Compare the resulting cosine simularity
         print("cosine simularity score:")
-        cosinesimularity = test_Framwork.validate.cosine_similarity_score(responsestates, expectedresponse)
-        print(test_Framwork.validate.cosine_similarity_score(responsestates, expectedresponse))
+        cosinesimularity = test_Framwork.validate.test_cosine_similarity_score(responsestates, expectedresponse)
+        print(test_Framwork.validate.test_cosine_similarity_score(responsestates, expectedresponse))
 
         def test_cosinesimularity():
                 print("cosinesimularity=" + str(cosinesimularity))
