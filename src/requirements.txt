@@ -1,0 +1,3 @@
+pytest
+gpt4all
+sklearn

@@ -1,5 +1,6 @@
 import json
 import testFramwork
+import pytest
 from gpt4all import GPT4All
 import config
 model = GPT4All(config.model)
