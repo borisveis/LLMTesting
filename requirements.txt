@@ -1,1 +1,5 @@
-gpt4all
+GPT4All
+scikit-learn
+sentence-transformers
+sentence_similarity
+cmake
