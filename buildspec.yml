@@ -1,0 +1,36 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+#      - current_branch=$(git rev-parse --abbrev-ref HEAD)
+  install:
+    runtime-versions:
+      python: 3.10
+  build:
+    commands:
+      - pip3 install --upgrade pip
+      - mkdir testResults
+      - pip3 install -r src/requirements.txt
+#      - pip3 install pytest
+      - python -m pytest ./src --junitxml=testResults/testReport.xml
+#      - [ "$current_branch" = "main" ] && echo "Current branch is main. What should I do?3
+  post_build:
+    commands:
+#      - git branch
+#      - CURRENT_COMMIT=$(git rev-parse HEAD)
+#      - echo "CURRENT_COMMIT is:" $CURRENT_COMMIT
+#      - MAIN_COMMIT=$(git rev-parse main)
+#      - echo "MAIN_COMMIT is:" $MAIN_COMMIT
+#      - if [ $CURRENT_COMMIT = $MAIN_COMMIT ]; then
+#        echo "Detached head is at the same commit as main branch."; echo "additional execution instructions go here";
+#        else
+#        echo "Detached head is not at the same commit as main branch.";
+#        fi
+reports:
+  Pytests:
+    files:
+      - testResults/*
+      - "testReport.xml"
+    base-directory: testResults/
+    discard-paths: no
+    file-format: "JUNITXML"
