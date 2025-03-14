@@ -12,7 +12,7 @@ phases:
       - mkdir testResults
       - pip3 install -r src/requirements.txt
 #      - pip3 install pytest
-      - python -m pytest ./src --junitxml=testResults/testReport.xml
+      - python -m pytest . --junitxml=testResults/testReport.xml
 #      - [ "$current_branch" = "main" ] && echo "Current branch is main. What should I do?3
   post_build:
     commands:
