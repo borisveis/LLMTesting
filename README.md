@@ -36,3 +36,11 @@ As initial conditions of each environment are unique, please let me know if you 
 
 Configure model to use in src/utils/config.json
     note, model must be installed in the GPT4all default directory. 
+
+#To deploy and trigger lambda
+#Zip lamda file
+#zip lambda_function.zip lambda_function.py
+#deploy lambda with terraform as normally
+
+#tickle lambda
+# aws lambda invoke --function-name my_lambda_function response.json
